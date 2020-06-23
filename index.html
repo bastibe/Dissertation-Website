@@ -12,7 +12,23 @@
       <h2>Algorithms, Ground Truths, and Evaluation Methods</h2>
     </header>
     <main>
-      The companion Website for my Dissertation of the above name.
+      <p>Speech is fundamental to humanity as our primary means of communication and expression. Speech sounds are produced by a vibration of our vocal chords or a constriction in the vocal tract, which excite the air in the vocal cavities into resonance, and are expelled through our nose and mouth. By rapidly changing the configuration of our vocal organs, we can mold such sounds into language, to be transmitted through the air, and heard by human ears.</p>
+
+      <p>When this sound is produced by a vibration of the vocal chords, its waveform becomes periodic, and its spectrum harmonic. When we hear such a “voiced” sound, we perceive it as having a <em>pitch</em>, that corresponds to the frequency of the vocal chord vibration and the harmonic spacing of the spectrum. This quantity can be estimated with computer algorithms, and is then typically referred to as a <em>fundamental frequency</em>.</p>
+
+      <p>Such fundamental frequency estimation algorithms are a key ingredient for various speech analysis tasks such as speech recognition, speaker identification, and speech compression. This dissertation is about the construction of such algorithms, how to evaluate their performance, and a large comparison study of common implementations.</p>
+
+      <p>The first major contribution of this dissertation is a new algorithm for estimating the fundamental frequency of speech. The algorithm combines features from multiple domains into a probabilistic pitch confidence measure that evaluates the probability of a short segment of audio having a certain fundamental frequency. This measure is unusual in that it is a true probability that can both, accept and reject each candidate frequency instead of merely finding the most probable one. Its estimates are thus more sparse than similar algorithms', but also more robust. These characteristics are validated in a large evaluation with speech and noise recordings and in comparison with a number of well-known reference algorithms.</p>
+
+      <p>However, this evaluation brought to light a fundamental idiosyncracy of speech analysis, that the only <em>truth</em> of speech properties is often human perception. These being unavailable to computer programs, evaluations of their accuracy must rely on some other form of truth, which is necessarily flawed. To investigate this, we conducted a study of numerous speech databases and their fundamental frequency ground truths, and found them unsatisfyingly variant and inconsistent.</p>
+
+      <p>The second major contribution is then a new ground truth measure for fundamental frequency, constructed from the consensus of a number of existing fundamental frequency estimation algorithms. In contrast to existing truths, ours does not rely on categorically problematic laryngograph recordings, nor on the estimates and biases of a single algorithm. This was validated to be very similar to existing ground truths, but more suitable to the task of evaluating the accuracy of algorithms in difficult edge cases.</p>
+
+      <p>Thirdly, a comparison study of unprecedented depth is conducted of not just fundamental frequency estimation algorithms, but also speech and noise corpora, as well as ground truths. In preparation for this comparison study, a uniquely large and reproducible dataset of algorithms, signals, truths, and performance measures is constructed, that can be of independent value to future researchers and is available on this dissertation's companion website.</p>
+
+      <p>Finally, the comparison itself investigated the characteristics of 25 fundamental frequency estimation algorithms from the last thirty years of digital signal processing history in hitherto unknown detail. This comparison revealed a number of previously unknown properties of all of these algorithms, particularly in their biases towards certain speech corpora and performance measures.</p>
+
+      <p>In summary, this dissertation investigates the algorithmic estimation of the fundamental frequency of speech. Just like our human perception of it, its estimates are often inherently ambiguous, and a clear definition of a “true” pitch is difficult. Yet, this topic of research has a rich history, and its algorithms are now as intricate and interesting as speech itself.</p>
     </main>
   </body>
 </html>
