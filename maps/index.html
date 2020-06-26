@@ -1,0 +1,214 @@
+<!doctype HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>MaPS: A Fundamental Frequency Estimation Algorithm</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <script src="fft.js"></script>
+        <script src="plotly-latest.min.js"></script>
+        <script src="maps.js"></script>
+
+        <header>
+            <h1>Fundamental Frequency Estimation of the Human Voice with the Magnitude and Phase Spectrogram</h1>
+        </header>
+
+        <article>
+
+            <p class="abstract">The fundamental frequency of the human voice is an important feature
+              for various speech processing applications such as speech enhancement, speech
+              separation, and speech compression algorithms. This paper presents an algorithm that
+              probabilistically combines features from the magnitude spectrum and the phase
+              spectrum, and derives a direct pitch confidence measure, which avoids both octave
+              errors and ambiguous estimates. The algorithm estimates fewer frames as voiced, but
+              remains reliable even with high levels of noise. These characteristics are examined
+              with synthetic tone complexes and a large, freely available corpus of speech and noise
+              recordings.</p>
+
+            <div id="introspectrogram"></div>
+
+
+            <h2>Code</h2>
+
+            <p>Source code for MaPS
+              in <a href="https://www.python.org/">Python</a>,
+              <a href="https://www.mathworks.com/products/matlab.html">Matlab</a>,
+              and <a href="https://julialang.org/">Julia</a> can be downloaded by cloning this
+              repository:</p>
+            <p><i>Currently, this only contains byte code. Source code examples will be made
+                available here as soon as the paper has passed review.</i></p>
+            <code>git clone https://github.com/bastibe/maps_reproducible.git</code>
+            <p>The code is released under the terms of the
+              <a href="https://opensource.org/licenses/GPL-3.0">GNU LGPL 3 license</a>, © 2018,
+              Bastian Bechtold, Jade Hochschule. This means that the source code can be read, used,
+              and modified freely, but our authorship of the code must be recognized, and any source
+              distributed with our code must be licensed under a LGPL-compatible license.
+              Additionally, we kindly request feedback on how the code is used.</p>
+
+
+            <h2>Methods</h2>
+
+            <p>MaPS consists of two complementary features, one correlates a comb-like template with
+              the magnitude spectrum, the other compares a sawtooth-like template with a derivation
+              of the phase spectrum. The results are combined to a probabilistic measure, which
+              serves both as voicing detector and as fundamental frequency estimator.</p>
+
+            <p>This combination solves both the octave ambiguities in the magnitude spectrum and the
+              loudness ambiguities in the phase spectrum, and results in a robust and precise
+              <em>pitch confidence</em> that excludes not only unlikely pitches, but ambiguous
+              estimates as well.</p>
+
+            <h3>Voice in the Magnitude Spectrum</h3>
+
+            <p>In the magnitude spectrum, speech forms a comb pattern with comb teeth at the
+              fundamental frequency and its harmonics. MaPS correlates a number of comb templates at
+              different fundamental frequencies with the signal magnitude spectrum:</p>
+
+            <div id="magnitude-template"></div>
+            <script src="magnitude-template.js"></script>
+            <form style="text-align:center;">
+                <label>template fundamental frequency:</label>
+                <label class="value" id="magnitude:value">loading</label><br>
+                <label class="start">80&thinsp;Hz</label>
+                <input id="magnitude:slider" type="range"
+                       name="fundamental frequency"
+                       min="80" max="450" step="5" value ="150"
+                       oninput="updateMagnitudeTemplate(this.value);"
+                       style="width:150px;">
+                <label class="stop">450&thinsp;Hz</label>
+            </form>
+
+            <p>At about 115&thinsp;Hz, all the peaks in the template match up with the peaks in the
+              spectrum, and the correlation reaches its maximum. This point corresponds to the true
+              fundamental frequency of this spectrum.</p>
+
+            <p>However, any magnitude-spectrum based measure is susceptible to octave errors, since
+            any comb-like template correlates not only with the fundamental frequency, but also with
+            higher harmonics. This is already addressed by introducing negative valleys between the
+            positive comb teeth, but some ambiguity remains.</p>
+
+            <h3>Voice in the Phase Spectrum</h3>
+
+            <p>For the phase spectrum feature, MaPS uses the instantaneous frequency deviation,
+              which is the difference between the instantanous frequency spectrum and the frequency
+              f, or IF(f)-f. The instantaneous frequency is the time-derivative of the phase
+              spectrum. The instantaneous frequency deviation for the same speech signal as
+              discussed in the introduction looks like this:</p>
+
+            <div id="ifd"></div>
+            <script>display_ifd("Mann_short.wav", "ifd", [650, 300])</script>
+
+            <p>Thus, speech forms a sawtooth pattern with zeroes at the fundamental frequency and
+              its harmonics. MaPS compares a number of sawtooth templates at different fundamental
+              frequencies with the instantanous frequency deviation of the signal spectrum:</p>
+
+            <div id="phase-template"></div>
+            <script src="phase-template.js"></script>
+            <form style="text-align:center;">
+                <label>template fundamental frequency:</label>
+                <label class="value" id="phase:value">loading</label><br>
+                <label class="start">80&thinsp;Hz</label>
+                <input id="phase:slider" type="range"
+                       name="fundamental frequency"
+                       min="80" max="450" step="5" value ="150"
+                       oninput="updatePhaseTemplate(this.value);"
+                       style="width:150px;">
+                <label class="stop">450&thinsp;Hz</label>
+            </form>
+
+            <p>At about 115&thinsp;Hz, all the zeros in the template match up with the zeros in the
+              spectrum, and the difference reaches its minimum. This frequency corresponds to the
+              fundamental frequency for this spectrum.</p>
+
+            <p>However, any phase-spectrum based measure can not discern quiet parts of the signal
+              from salient speech patterns, since even very quiet tones can have distinctive
+              phase spectra.</p>
+
+            <h3>Combination of Features</h3>
+
+            <p>MaPS combines the magnitude feature and the phase feature in a Bayesan maximum a
+              posteriori fundamental frequency estimator and voicing detector we call the <em>pitch
+              confidence</em>. Since the error modes of the two features can never overlap, the
+              pitch confidence can reduce their ambiguities and produce a highly reliable and
+              precise measure for fundamental frequency estimation.</p>
+
+              <p>The results of this estimation on a few speech signals from the
+                <a href="https://www.spsc.tugraz.at/tools/ptdb-tug">PTDB-TUG</a> database and noises
+                from the <a href="http://eprints.qut.edu.au/85240/">QUT-NOISE</a> corpus can be seen
+                in the following figure:</p>
+
+            <div id="maps"></div>
+            <select id="maps:speaker" style="text-align:center;" onchange="refresh_maps()">
+                <option value="male1">Male Speaker</option>
+                <option value="female2" selected>Female Speaker</option>
+            </select>
+            <select id="maps:snr" style="text-align:center;" onchange="refresh_maps()">
+                <option value="40">40&thinsp;dB SNR</option>
+                <option value="35">35&thinsp;dB SNR</option>
+                <option value="30">30&thinsp;dB SNR</option>
+                <option value="25">25&thinsp;dB SNR</option>
+                <option value="20">20&thinsp;dB SNR</option>
+                <option value="15">15&thinsp;dB SNR</option>
+                <option value="10" selected>10&thinsp;dB SNR</option>
+                <option value="5">5&thinsp;dB SNR</option>
+                <option value="0">0&thinsp;dB SNR</option>
+                <option value="-5">-5&thinsp;dB SNR</option>
+                <option value="-10">-10&thinsp;dB SNR</option>
+                <option value="-15">-15&thinsp;dB SNR</option>
+                <option value="-20">-20&thinsp;dB SNR</option>
+            </select>
+            <select id="maps:noise" style="text-align:center;" onchange="refresh_maps()">
+                <option value="cafeteria">Cafeteria Noise</option>
+                <option value="white">White Noise</option>
+                <option value="traffic">Traffic Noise</option>
+                <option value="car" selected>Driving Noise</option>
+            </select>
+            <audio id="maps:player" controls></audio>
+
+            <p>This figure shows how MaPS accurately recognizes the base frequency track in noisy
+              speech recordings. In general, MaPS prefers to reject ambiguous frames over giving
+              uncertain estimates, and thus accepts some false negatives in favor of too many false
+              positives. For many applications, this is advantageous, since it is often more
+              important to obtain <emph>reliable</emph> results than to get <em>plentiful</em>
+              estimates.</p>
+
+
+            <h2>Evaluation</h2>
+
+            <p>The fundamental frequency estimation performance of MaPS was evaluated using a large
+              database of f₀-annotated speech recordings from the
+              <a href="https://www.spsc.tugraz.at/tools/ptdb-tug">PTDB-TUG</a> corpus, and acoustic
+              noise recordings from the <a href="http://eprints.qut.edu.au/85240/">QUT-NOISE</a>
+              corpus.</p>
+
+            <p>Additionally, the same samples were subjected to the well-known fundamental frequency
+              estimation algorithms <a href="http://dx.dio.org/10.1109/TASLP.2013.2295918">
+              PEFAC</a>, <a href="http://www.ee.columbia.edu/~dpwe/papers/Talkin95-rapt.pdf">RAPT</a>,
+              and <a href="http://dx.dio.org/10.1121/1.1458024">YIN</a>. The error measures for this
+              evaluation are:</p>
+
+            <dl>
+              <dt>Gross Pitch Error</dt>
+              <dd>Percentage of frames that are correctly classified as pitched, and whose pitch is
+                within 20&thinsp;% of the true pitch.</dd>
+              <dt>Fine Pitch Error</dt>
+              <dd>Mean error of pitch estimates that are within 20&thinsp;%.</dd>
+            </dl>
+
+            <div id="maps-gpe"></div><div id="maps-fpe"></div>
+            <script src="maps-compare.js"></script>
+
+            <p>This high precision of MaPS is in part due to its comparatively conservative voicing
+              detector, which refuses to guess for ambiguous fundamentals, for example during
+              phoneme transitions or noisy fricatives. The pitch confidence is thus a true
+              probability of being correct, and not just a maximum likelihood measure.</p>
+
+        </article>
+
+        <footer>
+          <p>© 2020, Bastian Bechtold. All rights reserved</p>
+        </footer>
+
+    </body>
+</html>
