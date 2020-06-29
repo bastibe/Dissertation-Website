@@ -1,7 +1,7 @@
-header h1 {
+main h1 {
     font-size: 36px;
 }
-header h2 {
+main h2 {
     font-size: 18px;
     font-weight: normal;
 }
@@ -59,7 +59,7 @@ code {
     display: block;
 }
 
-footer {
+footer, header {
     font-family: "Open Sans Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333333;
     width: 100%;

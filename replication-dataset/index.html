@@ -7,236 +7,253 @@
   </head>
   <body>
     <header>
-      <h1>A Replication Dataset for Fundamental Frequency Estimation</h1>
+      <p>Part of the dissertation <a href="../index.html">Pitch of
+          Voiced Speech in the Short-Time Fourier Transform: Algorithms,
+          Ground Truths, and Evaluation Methods</a>. <br>
+        (Preprint Manuscript) <br>
+        © 2020, Bastian Bechtold. All rights reserved.</p>
     </header>
 
-    <article>
-      <p class="abstract">Estimating the fundamental frequency of
-        speech remains an active area of research, with varied
-        applications in speech recognition, speaker identification,
-        and speech compression. A vast number of algorithms for
-        estimatimating this quantity have been proposed over the
-        years, and a number of speech and noise corpora have been
-        developed for evaluating their performance. The present
-        dataset contains estimated fundamental frequency tracks of 25
-        algorithms, six speech corpora, two noise corpora, at nine
-        signal-to-noise ratios between -20 and 20 dB SNR, as well as
-        an additional evaluation of synthetic harmonic tone complexes
-        in white noise.</p>
+    <main>
+      <h1>A Replication Dataset for Fundamental Frequency Estimation</h1>
 
-      <p class="abstract">The dataset also contains pre-calculated
-        performance measures both novel and traditional, in reference
-        to each speech corpus' ground truth, the algorithms' own
-        clean-speech estimate, and our own consensus truth. It can
-        thus serve as the basis for a comparison study, or to
-        replicate existing studies from a larger dataset, or as a
-        reference for developing new fundamental frequency estimation
-        algorithms. All source code and data is available to download,
-        and entirely reproducible, albeit requiring about one year of
-        processor-time.</p>
+      <article>
+        <p class="abstract">Estimating the fundamental frequency of
+          speech remains an active area of research, with varied
+          applications in speech recognition, speaker identification,
+          and speech compression. A vast number of algorithms for
+          estimatimating this quantity have been proposed over the
+          years, and a number of speech and noise corpora have been
+          developed for evaluating their performance. The present
+          dataset contains estimated fundamental frequency tracks of 25
+          algorithms, six speech corpora, two noise corpora, at nine
+          signal-to-noise ratios between -20 and 20 dB SNR, as well as
+          an additional evaluation of synthetic harmonic tone complexes
+          in white noise.</p>
 
-      <p>The Replication Dataset and the scripts necessary for
-        calculating is available
-        on <a href="http://doi.org/10.5281/zenodo.3904389">Zenodo</a>.</p>
+        <p class="abstract">The dataset also contains pre-calculated
+          performance measures both novel and traditional, in reference
+          to each speech corpus' ground truth, the algorithms' own
+          clean-speech estimate, and our own consensus truth. It can
+          thus serve as the basis for a comparison study, or to
+          replicate existing studies from a larger dataset, or as a
+          reference for developing new fundamental frequency estimation
+          algorithms. All source code and data is available to download,
+          and entirely reproducible, albeit requiring about one year of
+          processor-time.</p>
 
-      <p>The source code necessary for calculating the Replication
-        Dataset is available
-        on <a href="https://github.com/bastibe/Replication-Dataset-Scripts">Github</a>.</p>
+        <p>The Replication Dataset and the scripts necessary for
+          calculating is available
+          on Zenodo:</p>
+        <code><a href="http://doi.org/10.5281/zenodo.3904389">http://doi.org/10.5281/zenodo.3904389</a></code>
 
-      <p>The dataset contains fundamental frequency estimates for all
-        speech recordings in the following corpora:</p>
+        <p>The source code necessary for calculating the Replication
+          Dataset is available
+          on Github:</p>
+        <code><a href="https://github.com/bastibe/Replication-Dataset-Scripts">https://github.com/bastibe/Replication-Dataset-Scripts</a></code>
 
-      <ul>
-        <li><a href="http://www.festvox.org/cmu_arctic/">CMU-ARCTIC</a> (<em>consensus truth</em>) [1]</li>
-        <li><a href="http://www.cstr.ed.ac.uk/research/projects/fda/">FDA</a> (<em>corpus truth</em> and <em>consensus truth</em>) [2]</li>
-        <li><a href="https://lost-contact.mit.edu/afs/nada.kth.se/dept/tmh/corpora/KeelePitchDB/">KEELE</a> (<em>corpus truth</em> and <em>consensus truth</em>) [3]</li>
-        <li><a href="http://www.cstr.ed.ac.uk/research/projects/artic/mocha.html">MOCHA-TIMIT</a> (<em>consensus truth</em>) [4]</li>
-        <li><a href="https://www.spsc.tugraz.at/databases-and-tools/ptdb-tug-pitch-tracking-database-from-graz-university-of-technology.html">PTDB-TUG</a> (<em>corpus truth</em> and <em>consensus truth</em>) [5]</li>
-        <li><a href="https://catalog.ldc.upenn.edu/LDC93S1">TIMIT</a> (<em>consensus truth</em>) [6]</li>
-      </ul>
+        <p>The dataset contains fundamental frequency estimates for all
+          speech recordings in the following corpora:</p>
 
-      <p>Additionally, it contains fundamental frequency estimates for
-        a number of the above speech recordings mixed with noises from
-        the following corpora, as well as synthetic tone complexes in
-        white noise:</p>
+        <ul>
+          <li><a href="http://www.festvox.org/cmu_arctic/">CMU-ARCTIC</a>
+            (<em>consensus truth</em>) [1]</li>
+          <li><a href="http://www.cstr.ed.ac.uk/research/projects/fda/">FDA</a>
+          (<em>corpus truth</em> and <em>consensus truth</em>) [2]</li>
+          <li><a href="https://lost-contact.mit.edu/afs/nada.kth.se/dept/tmh/corpora/KeelePitchDB/">KEELE</a>
+            (<em>corpus truth</em> and <em>consensus truth</em>) [3]</li>
+          <li><a href="http://www.cstr.ed.ac.uk/research/projects/artic/mocha.html">MOCHA-TIMIT</a>
+            (<em>consensus truth</em>) [4]</li>
+          <li><a href="https://www.spsc.tugraz.at/databases-and-tools/ptdb-tug-pitch-tracking-database-from-graz-university-of-technology.html">PTDB-TUG</a>
+            (<em>corpus truth</em> and <em>consensus truth</em>) [5]</li>
+          <li><a href="https://catalog.ldc.upenn.edu/LDC93S1">TIMIT</a>
+            (<em>consensus truth</em>) [6]</li>
+        </ul>
 
-      <ul>
-        <li><a href="http://www.speech.cs.cmu.edu/comp.speech/Section1/Data/noisex.html">NOISEX</a> [7]</li>
-        <li><a href="https://research.qut.edu.au/saivt/databases/qut-noise-databases-and-protocols/">QUT-NOISE</a> [8]</li>
-      </ul>
+        <p>Additionally, it contains fundamental frequency estimates for
+          a number of the above speech recordings mixed with noises from
+          the following corpora, as well as synthetic tone complexes in
+          white noise:</p>
 
-      <p>Fundamental frequency estimates are calculated for the
-        following fundamental frequency estimation algorithms:</p>
+        <ul>
+          <li><a href="http://www.speech.cs.cmu.edu/comp.speech/Section1/Data/noisex.html">NOISEX</a> [7]</li>
+          <li><a href="https://research.qut.edu.au/saivt/databases/qut-noise-databases-and-protocols/">QUT-NOISE</a> [8]</li>
+        </ul>
 
-      <ul>
-        <li>AUTOC [9]</li>
-        <li>AMDF [10]</li>
-        <li><a href="http://www2.ece.rochester.edu/projects/wcng/code.html">BANA</a> [11]</li>
-        <li>CEP [12]</li>
-        <li><a href="https://github.com/marl/crepe">CREPE</a> [13]</li>
-        <li><a href="http://www.kki.yamanashi.ac.jp/~mmorise/world/english/">DIO</a> [14]</li>
-        <li><a href="http://web.cse.ohio-state.edu/pnl/software.html">DNN</a> [15]</li>
-        <li><a href="https://github.com/LvHang/pitch">KALDI</a> [16]</li>
-        <li>MAPS</li>
-        <li><a href="http://www.seas.ucla.edu/spapl/shareware.html">MBSC</a> [17]</li>
-        <li><a href="https://github.com/jkjaer/fastF0Nls">NLS</a> [18]</li>
-        <li><a href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.html">PEFAC</a> [19]</li>
-        <li><a href="https://github.com/praat/praat">PRAAT</a> [20]</li>
-        <li><a href="http://www.speech.kth.se/wavesurfer/links.html">RAPT</a> [21]</li>
-        <li><a href="http://labrosa.ee.columbia.edu/projects/SAcC/">SACC</a> [22]</li>
-        <li><a href="http://www.seas.ucla.edu/spapl/weichu/safe/">SAFE</a> [23]</li>
-        <li><a href="https://mathworks.com/matlabcentral/fileexchange/1230">SHR</a> [24]</li>
-        <li>SIFT [25]</li>
-        <li><a href="https://github.com/covarep/covarep">SRH</a> [26]</li>
-        <li><a href="https://github.com/HidekiKawahara/legacy_straight">STRAIGHT</a> [27]</li>
-        <li><a href="http://www.cise.ufl.edu/~acamacho/english/curriculum.html">SWIPE</a> [28]</li>
-        <li><a href="http://www.ws.binghamton.edu/zahorian/yaapt.htm">YAAPT</a> [29]</li>
-        <li><a href="http://audition.ens.fr/adc/">YIN</a> [30]</li>
-      </ul>
+        <p>Fundamental frequency estimates are calculated for the
+          following fundamental frequency estimation algorithms:</p>
 
-      <p>For all combinations of speech and noise, the following
-        performance measures are calculated:</p>
+        <ul>
+          <li>AUTOC [9]</li>
+          <li>AMDF [10]</li>
+          <li><a href="http://www2.ece.rochester.edu/projects/wcng/code.html">BANA</a> [11]</li>
+          <li>CEP [12]</li>
+          <li><a href="https://github.com/marl/crepe">CREPE</a> [13]</li>
+          <li><a href="http://www.kki.yamanashi.ac.jp/~mmorise/world/english/">DIO</a> [14]</li>
+          <li><a href="http://web.cse.ohio-state.edu/pnl/software.html">DNN</a> [15]</li>
+          <li><a href="https://github.com/LvHang/pitch">KALDI</a> [16]</li>
+          <li>MAPS</li>
+          <li><a href="http://www.seas.ucla.edu/spapl/shareware.html">MBSC</a> [17]</li>
+          <li><a href="https://github.com/jkjaer/fastF0Nls">NLS</a> [18]</li>
+          <li><a href="http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.html">PEFAC</a> [19]</li>
+          <li><a href="https://github.com/praat/praat">PRAAT</a> [20]</li>
+          <li><a href="http://www.speech.kth.se/wavesurfer/links.html">RAPT</a> [21]</li>
+          <li><a href="http://labrosa.ee.columbia.edu/projects/SAcC/">SACC</a> [22]</li>
+          <li><a href="http://www.seas.ucla.edu/spapl/weichu/safe/">SAFE</a> [23]</li>
+          <li><a href="https://mathworks.com/matlabcentral/fileexchange/1230">SHR</a> [24]</li>
+          <li>SIFT [25]</li>
+          <li><a href="https://github.com/covarep/covarep">SRH</a> [26]</li>
+          <li><a href="https://github.com/HidekiKawahara/legacy_straight">STRAIGHT</a> [27]</li>
+          <li><a href="http://www.cise.ufl.edu/~acamacho/english/curriculum.html">SWIPE</a> [28]</li>
+          <li><a href="http://www.ws.binghamton.edu/zahorian/yaapt.htm">YAAPT</a> [29]</li>
+          <li><a href="http://audition.ens.fr/adc/">YIN</a> [30]</li>
+        </ul>
 
-      <ul>
-        <li>Gross Pitch Error (GPE), the percentage of pitches where
-          the estimated pitch deviates from the true pitch by more
-          than 20%.</li>
-        <li>Fine Pitch Error (FPE), the mean error of grossly correct
-          estimates.</li>
-        <li>High/Low Octave Pitch Error (OPE), the percentage pitches
-          that are GPEs and happens to be at an integer multiple of
-          the true pitch.</li>
-        <li>Gross Remaining Error (GRE), the percentage of pitches
-          that are GPEs but not OPEs.</li>
-        <li>Fine Remaining Bias (FRB), the median error of GREs.</li>
-        <li>True Positive Rate (TPR), the percentage of true positive
-          voicing estimates.</li>
-        <li>False Positive Rate (FPR), the percentage of false
-          positive voicing estimates.</li>
-        <li>False Negative Rate (FNR), the percentage of false
-          negative voicing estimates.</li>
-        <li>F₁, the harmonic mean of precision and recall of the
-          voicing decision.</li>
-      </ul>
+        <p>For all combinations of speech and noise, the following
+          performance measures are calculated:</p>
 
-      <h2>References:</h2>
-      <ol class="references">
-        <li>John Kominek and Alan W Black. CMU ARCTIC database for
-          speech synthesis, 2003.</li>
-        <li>Paul C Bagshaw, Steven Hiller, and Mervyn A Jack. Enhanced
-          Pitch Tracking and the Processing of F0 Contours for
-          Computer Aided Intonation Teaching. In EUROSPEECH,
-          1993.</li>
-        <li>F Plante, Georg F Meyer, and William A Ainsworth. A Pitch
-          Extraction Reference Database. In Fourth European Conference
-          on Speech Communication and Technology, pages 837–840,
-          Madrid, Spain, 1995.</li>
-        <li>Alan Wrench. MOCHA MultiCHannel Articulatory database:
-          English, November 1999.</li>
-        <li>Gregor Pirker, Michael Wohlmayr, Stefan Petrik, and Franz
-          Pernkopf. A Pitch Tracking Corpus with Evaluation on
-          Multipitch Tracking Scenario. page 4, 2011.</li>
-        <li>John S. Garofolo, Lori F. Lamel, William M. Fisher,
-          Jonathan G. Fiscus, David S. Pallett, Nancy L. Dahlgren, and
-          Victor Zue. TIMIT Acoustic-Phonetic Continuous Speech
-          Corpus, 1993.</li>
-        <li>Andrew Varga and Herman J.M. Steeneken. Assessment for
-          automatic speech recognition: II. NOISEX-92: A database and
-          an experiment to study the effect of additive noise on
-          speech recog- nition systems. Speech Communication,
-          12(3):247–251, July 1993.</li>
-        <li>David B. Dean, Sridha Sridharan, Robert J. Vogt, and
-          Michael W. Mason. The QUT-NOISE-TIMIT corpus for the
-          evaluation of voice activity detection algorithms.
-          Proceedings of Interspeech 2010, 2010.</li>
-        <li>Man Mohan Sondhi. New methods of pitch extraction. Audio
-          and Electroacoustics, IEEE Transactions on, 16(2):262—266,
-          1968.</li>
-        <li>Myron J. Ross, Harry L. Shaffer, Asaf Cohen, Richard
-          Freudberg, and Harold J. Manley. Average magnitude
-          difference function pitch extractor. Acoustics, Speech and
-          Signal Processing, IEEE Transactions on, 22(5):353—362,
-          1974.</li>
-        <li>Na Yang, He Ba, Weiyang Cai, Ilker Demirkol, and Wendi
-          Heinzelman. BaNa: A Noise Resilient Fundamental Frequency
-          Detection Algorithm for Speech and Music. IEEE/ACM
-          Transactions on Audio, Speech, and Language Processing,
-          22(12):1833–1848, December 2014.</li>
-        <li>Michael Noll. Cepstrum Pitch Determination. The Journal of
-          the Acoustical Society of America, 41(2):293–309, 1967.</li>
-        <li>Jong Wook Kim, Justin Salamon, Peter Li, and Juan Pablo
-          Bello. CREPE: A Convolutional Representation for Pitch
-          Estimation. arXiv:1802.06182 [cs, eess, stat], February
-          2018. arXiv: 1802.06182.</li>
-        <li>Masanori Morise, Fumiya Yokomori, and Kenji Ozawa. WORLD:
-          A Vocoder-Based High-Quality Speech Synthesis System for
-          Real-Time Applications. IEICE Transactions on Information
-          and Systems, E99.D(7):1877–1884, 2016.</li>
-        <li>Kun Han and DeLiang Wang. Neural Network Based Pitch
-          Tracking in Very Noisy Speech. IEEE/ACM Transactions on
-          Audio, Speech, and Language Processing, 22(12):2158–2168,
-          Decem- ber 2014.</li>
-        <li>Pegah Ghahremani, Bagher BabaAli, Daniel Povey, Korbinian
-          Riedhammer, Jan Trmal, and Sanjeev Khudanpur. A pitch
-          extraction algorithm tuned for automatic speech recognition.
-          In Acoustics, Speech and Signal Processing (ICASSP), 2014
-          IEEE International Conference on, pages 2494–2498. IEEE,
-          2014.</li>
-        <li>Lee Ngee Tan and Abeer Alwan. Multi-band summary
-          correlogram-based pitch detection for noisy speech. Speech
-          Communication, 55(7-8):841–856, September 2013.</li>
-        <li>Jesper Kjær Nielsen, Tobias Lindstrøm Jensen, Jesper
-          Rindom Jensen, Mads Græsbøll Christensen, and Søren Holdt
-          Jensen. Fast fundamental frequency estimation: Making a
-          statistically efficient estimator computationally efficient.
-          Signal Processing, 135:188–197, June 2017.</li>
-        <li>Sira Gonzalez and Mike Brookes. PEFAC - A Pitch Estimation
-          Algorithm Robust to High Levels of Noise. IEEE/ACM
-          Transactions on Audio, Speech, and Language Processing,
-          22(2):518—530, February 2014.</li>
-        <li>Paul Boersma. Accurate short-term analysis of the
-          fundamental frequency and the harmonics-to-noise ratio of a
-          sampled sound. In Proceedings of the institute of phonetic
-          sciences, volume 17, page 97—110. Amsterdam, 1993.</li>
-        <li>David Talkin. A robust algorithm for pitch tracking
-          (RAPT). Speech coding and synthesis, 495:518, 1995.</li>
-        <li>Byung Suk Lee and Daniel PW Ellis. Noise robust pitch
-          tracking by subband autocorrelation classification. In
-          Interspeech, pages 707–710, 2012.</li>
-        <li>Wei Chu and Abeer Alwan. SAFE: a statistical algorithm for
-          F0 estimation for both clean and noisy speech. In
-          INTERSPEECH, pages 2590–2593, 2010.</li>
-        <li>Xuejing Sun. Pitch determination and voice quality
-          analysis using subharmonic-to-harmonic ratio. In Acoustics,
-          Speech, and Signal Processing (ICASSP), 2002 IEEE
-          International Conference on, volume 1, page I—333. IEEE,
-          2002.</li>
-        <li>Markel. The SIFT algorithm for fundamental frequency
-          estimation. IEEE Transactions on Audio and Electroacoustics,
-          20(5):367—377, December 1972.</li>
-        <li>Thomas Drugman and Abeer Alwan. Joint Robust Voicing
-          Detection and Pitch Estimation Based on Residual Harmonics.
-          In Interspeech, page 1973—1976, 2011.</li>
-        <li>Hideki Kawahara, Masanori Morise, Toru Takahashi, Ryuichi
-          Nisimura, Toshio Irino, and Hideki Banno. TANDEM-STRAIGHT: A
-          temporally stable power spectral representation for periodic
-          signals and applications to interference-free spectrum, F0,
-          and aperiodicity estimation. In Acous- tics, Speech and
-          Signal Processing, 2008. ICASSP 2008. IEEE International
-          Conference on, pages 3933–3936. IEEE, 2008.</li>
-        <li>Arturo Camacho. SWIPE: A sawtooth waveform inspired pitch
-          estimator for speech and music. PhD thesis, University of
-          Florida, 2007.</li>
-        <li>Kavita Kasi and Stephen A. Zahorian. Yet Another Algorithm
-          for Pitch Tracking. In IEEE International Conference on
-          Acoustics Speech and Signal Processing, pages I–361–I–364,
-          Orlando, FL, USA, May 2002. IEEE.</li>
-        <li>Alain de Cheveigné and Hideki Kawahara. YIN, a fundamental
-          frequency estimator for speech and music. The Journal of the
-          Acoustical Society of America, 111(4):1917, 2002.</li>
-      </ol>
+        <ul>
+          <li>Gross Pitch Error (GPE), the percentage of pitches where
+            the estimated pitch deviates from the true pitch by more
+            than 20%.</li>
+          <li>Fine Pitch Error (FPE), the mean error of grossly correct
+            estimates.</li>
+          <li>High/Low Octave Pitch Error (OPE), the percentage pitches
+            that are GPEs and happens to be at an integer multiple of
+            the true pitch.</li>
+          <li>Gross Remaining Error (GRE), the percentage of pitches
+            that are GPEs but not OPEs.</li>
+          <li>Fine Remaining Bias (FRB), the median error of GREs.</li>
+          <li>True Positive Rate (TPR), the percentage of true positive
+            voicing estimates.</li>
+          <li>False Positive Rate (FPR), the percentage of false
+            positive voicing estimates.</li>
+          <li>False Negative Rate (FNR), the percentage of false
+            negative voicing estimates.</li>
+          <li>F₁, the harmonic mean of precision and recall of the
+            voicing decision.</li>
+        </ul>
 
-    </article>
+        <h2>References:</h2>
+        <ol class="references">
+          <li>John Kominek and Alan W Black. CMU ARCTIC database for
+            speech synthesis, 2003.</li>
+          <li>Paul C Bagshaw, Steven Hiller, and Mervyn A Jack. Enhanced
+            Pitch Tracking and the Processing of F0 Contours for
+            Computer Aided Intonation Teaching. In EUROSPEECH,
+            1993.</li>
+          <li>F Plante, Georg F Meyer, and William A Ainsworth. A Pitch
+            Extraction Reference Database. In Fourth European Conference
+            on Speech Communication and Technology, pages 837–840,
+            Madrid, Spain, 1995.</li>
+          <li>Alan Wrench. MOCHA MultiCHannel Articulatory database:
+            English, November 1999.</li>
+          <li>Gregor Pirker, Michael Wohlmayr, Stefan Petrik, and Franz
+            Pernkopf. A Pitch Tracking Corpus with Evaluation on
+            Multipitch Tracking Scenario. page 4, 2011.</li>
+          <li>John S. Garofolo, Lori F. Lamel, William M. Fisher,
+            Jonathan G. Fiscus, David S. Pallett, Nancy L. Dahlgren, and
+            Victor Zue. TIMIT Acoustic-Phonetic Continuous Speech
+            Corpus, 1993.</li>
+          <li>Andrew Varga and Herman J.M. Steeneken. Assessment for
+            automatic speech recognition: II. NOISEX-92: A database and
+            an experiment to study the effect of additive noise on
+            speech recog- nition systems. Speech Communication,
+            12(3):247–251, July 1993.</li>
+          <li>David B. Dean, Sridha Sridharan, Robert J. Vogt, and
+            Michael W. Mason. The QUT-NOISE-TIMIT corpus for the
+            evaluation of voice activity detection algorithms.
+            Proceedings of Interspeech 2010, 2010.</li>
+          <li>Man Mohan Sondhi. New methods of pitch extraction. Audio
+            and Electroacoustics, IEEE Transactions on, 16(2):262—266,
+            1968.</li>
+          <li>Myron J. Ross, Harry L. Shaffer, Asaf Cohen, Richard
+            Freudberg, and Harold J. Manley. Average magnitude
+            difference function pitch extractor. Acoustics, Speech and
+            Signal Processing, IEEE Transactions on, 22(5):353—362,
+            1974.</li>
+          <li>Na Yang, He Ba, Weiyang Cai, Ilker Demirkol, and Wendi
+            Heinzelman. BaNa: A Noise Resilient Fundamental Frequency
+            Detection Algorithm for Speech and Music. IEEE/ACM
+            Transactions on Audio, Speech, and Language Processing,
+            22(12):1833–1848, December 2014.</li>
+          <li>Michael Noll. Cepstrum Pitch Determination. The Journal of
+            the Acoustical Society of America, 41(2):293–309, 1967.</li>
+          <li>Jong Wook Kim, Justin Salamon, Peter Li, and Juan Pablo
+            Bello. CREPE: A Convolutional Representation for Pitch
+            Estimation. arXiv:1802.06182 [cs, eess, stat], February
+            2018. arXiv: 1802.06182.</li>
+          <li>Masanori Morise, Fumiya Yokomori, and Kenji Ozawa. WORLD:
+            A Vocoder-Based High-Quality Speech Synthesis System for
+            Real-Time Applications. IEICE Transactions on Information
+            and Systems, E99.D(7):1877–1884, 2016.</li>
+          <li>Kun Han and DeLiang Wang. Neural Network Based Pitch
+            Tracking in Very Noisy Speech. IEEE/ACM Transactions on
+            Audio, Speech, and Language Processing, 22(12):2158–2168,
+            Decem- ber 2014.</li>
+          <li>Pegah Ghahremani, Bagher BabaAli, Daniel Povey, Korbinian
+            Riedhammer, Jan Trmal, and Sanjeev Khudanpur. A pitch
+            extraction algorithm tuned for automatic speech recognition.
+            In Acoustics, Speech and Signal Processing (ICASSP), 2014
+            IEEE International Conference on, pages 2494–2498. IEEE,
+            2014.</li>
+          <li>Lee Ngee Tan and Abeer Alwan. Multi-band summary
+            correlogram-based pitch detection for noisy speech. Speech
+            Communication, 55(7-8):841–856, September 2013.</li>
+          <li>Jesper Kjær Nielsen, Tobias Lindstrøm Jensen, Jesper
+            Rindom Jensen, Mads Græsbøll Christensen, and Søren Holdt
+            Jensen. Fast fundamental frequency estimation: Making a
+            statistically efficient estimator computationally efficient.
+            Signal Processing, 135:188–197, June 2017.</li>
+          <li>Sira Gonzalez and Mike Brookes. PEFAC - A Pitch Estimation
+            Algorithm Robust to High Levels of Noise. IEEE/ACM
+            Transactions on Audio, Speech, and Language Processing,
+            22(2):518—530, February 2014.</li>
+          <li>Paul Boersma. Accurate short-term analysis of the
+            fundamental frequency and the harmonics-to-noise ratio of a
+            sampled sound. In Proceedings of the institute of phonetic
+            sciences, volume 17, page 97—110. Amsterdam, 1993.</li>
+          <li>David Talkin. A robust algorithm for pitch tracking
+            (RAPT). Speech coding and synthesis, 495:518, 1995.</li>
+          <li>Byung Suk Lee and Daniel PW Ellis. Noise robust pitch
+            tracking by subband autocorrelation classification. In
+            Interspeech, pages 707–710, 2012.</li>
+          <li>Wei Chu and Abeer Alwan. SAFE: a statistical algorithm for
+            F0 estimation for both clean and noisy speech. In
+            INTERSPEECH, pages 2590–2593, 2010.</li>
+          <li>Xuejing Sun. Pitch determination and voice quality
+            analysis using subharmonic-to-harmonic ratio. In Acoustics,
+            Speech, and Signal Processing (ICASSP), 2002 IEEE
+            International Conference on, volume 1, page I—333. IEEE,
+            2002.</li>
+          <li>Markel. The SIFT algorithm for fundamental frequency
+            estimation. IEEE Transactions on Audio and Electroacoustics,
+            20(5):367—377, December 1972.</li>
+          <li>Thomas Drugman and Abeer Alwan. Joint Robust Voicing
+            Detection and Pitch Estimation Based on Residual Harmonics.
+            In Interspeech, page 1973—1976, 2011.</li>
+          <li>Hideki Kawahara, Masanori Morise, Toru Takahashi, Ryuichi
+            Nisimura, Toshio Irino, and Hideki Banno. TANDEM-STRAIGHT: A
+            temporally stable power spectral representation for periodic
+            signals and applications to interference-free spectrum, F0,
+            and aperiodicity estimation. In Acous- tics, Speech and
+            Signal Processing, 2008. ICASSP 2008. IEEE International
+            Conference on, pages 3933–3936. IEEE, 2008.</li>
+          <li>Arturo Camacho. SWIPE: A sawtooth waveform inspired pitch
+            estimator for speech and music. PhD thesis, University of
+            Florida, 2007.</li>
+          <li>Kavita Kasi and Stephen A. Zahorian. Yet Another Algorithm
+            for Pitch Tracking. In IEEE International Conference on
+            Acoustics Speech and Signal Processing, pages I–361–I–364,
+            Orlando, FL, USA, May 2002. IEEE.</li>
+          <li>Alain de Cheveigné and Hideki Kawahara. YIN, a fundamental
+            frequency estimator for speech and music. The Journal of the
+            Acoustical Society of America, 111(4):1917, 2002.</li>
+        </ol>
+
+      </article>
+    </main>
+
     <footer>
       <p>© 2020, Bastian Bechtold. All rights reserved</p>
     </footer>

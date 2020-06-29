@@ -7,119 +7,111 @@
   </head>
   <body>
     <header>
-      <h1>Fundamental Frequency Ground Truth for Speech Corpora from Multi-Algorithm Consensus</h1>
+      <p>Part of the dissertation <a href="../index.html">Pitch of
+          Voiced Speech in the Short-Time Fourier Transform: Algorithms,
+          Ground Truths, and Evaluation Methods</a>. <br>
+        (Preprint Manuscript) <br>
+        © 2020, Bastian Bechtold. All rights reserved.</p>
     </header>
 
-    <article>
-      <p class="abstract">The fundamental frequency of the human voice is an
-      essential feature for various speech processing tasks such as speech
-      recognition, speaker identification, and speech compression. Therefore, a
-      large number of fundamental frequency estimation algorithms have been
-      developed. To evaluate the performance of these algorithms, their
-      estimates are often compared against a known ground truth fundamental
-      frequency, typically derived from laryngograph recordings. However,
-      laryngograph recordings are not available for all kinds of speech corpora,
-      and can be tonal where the acoustic speech signal is not. Alternatively,
-      fundamental frequency estimates of speech in noise are compared against
-      clean speech estimates of a reference algorithm. While this works for
-      arbitrary speech recordings, it is highly dependent on the reference
-      algorithm. We therefore propose a new method for deriving a fundmental
-      frequency ground truth from the consensus of a number of state-of-the-art
-      fundamental frequency estimation algorithms, which can be calculated for
-      any speech corpus, is more robust than a single algorithm's estimate, and
-      which better reflects the acoustic tonality of speech.</p>
+    <main>
+      <h1>Fundamental Frequency Ground Truth for Speech Corpora from Multi-Algorithm Consensus</h1>
 
-      <p>
-        This website contains the new consensus ground truth data as
-        structured <a href="https://jbof.readthedocs.io/en/latest/">JBOF
-        datasets</a> datasets, as well as scripts for importing the original
-        datasets as JBOF datasets, and those imported datasets, for the
-        following five speech corpora:
-        <ul>
-          <li>
-            <a href="http://www.cstr.ed.ac.uk/research/projects/fda/">FDA</a> [<a href="#ref1">1</a>,<a href="#ref2">2</a>]:
-            <a href="FDA_pitch.zip">consensus truth</a>,
-            <a href="FDA_import.zip">import script</a>,
-            <a href="https://ccs.jade-hs.de/s/TxLcJGzcyBz6Edx">corpus dataset</a>
+      <article>
+        <p class="abstract">The fundamental frequency of the human voice is an
+          essential feature for various speech processing tasks such as speech
+          recognition, speaker identification, and speech compression. Therefore, a
+          large number of fundamental frequency estimation algorithms have been
+          developed. To evaluate the performance of these algorithms, their
+          estimates are often compared against a known ground truth fundamental
+          frequency, typically derived from laryngograph recordings. However,
+          laryngograph recordings are not available for all kinds of speech corpora,
+          and can be tonal where the acoustic speech signal is not. Alternatively,
+          fundamental frequency estimates of speech in noise are compared against
+          clean speech estimates of a reference algorithm. While this works for
+          arbitrary speech recordings, it is highly dependent on the reference
+          algorithm. We therefore propose a new method for deriving a fundmental
+          frequency ground truth from the consensus of a number of state-of-the-art
+          fundamental frequency estimation algorithms, which can be calculated for
+          any speech corpus, is more robust than a single algorithm's estimate, and
+          which better reflects the acoustic tonality of speech.</p>
+
+        <p>This website contains the new consensus ground truth data
+          as structured <a href="https://jbof.readthedocs.io/en/latest/">JBOF
+          datasets</a> datasets, as well as scripts for calculating
+          the consensus truth from the following five corpora
+          following five speech corpora:
+          <ul>
+            <li>
+              <a href="http://www.festvox.org/cmu_arctic/">FDA</a> [<a href="#ref1">1</a>]:
+              <a href="CMU-ARCTIC_pitch.zip">consensus truth</a>
+            </li>
+            <li>
+              <a href="http://www.cstr.ed.ac.uk/research/projects/fda/">FDA</a> [<a href="#ref2">2</a>]:
+              <a href="FDA_pitch.zip">consensus truth</a>
+            </li>
+            <li>
+              <a href="https://lost-contact.mit.edu/afs/nada.kth.se/dept/tmh/corpora/KeelePitchDB/Speech/">KEELE</a> [<a href="#ref3">3</a>]:
+              <a href="KEELE_pitch.zip">consensus truth</a>
+            </li>
+            <li>
+              <a href="https://www.spsc.tugraz.at/tools/ptdb-tug">PTDB-TUG</a> [<a href="#ref4">4</a>]:
+              <a href="PTDB-TUG_pitch.zip">consensus truth</a>
+            </li>
+            <li>
+              <a href="https://catalog.ldc.upenn.edu/LDC93S1">TIMIT</a> [<a href="#ref5">5</a>]:
+              <a href="TIMIT_pitch.zip">consensus truth</a>
+            </li>
+            <li>
+              <a href="http://www.cstr.ed.ac.uk/research/projects/artic/mocha.html">MOCHA-TIMIT</a> [<a href="#ref6">6</a>]:
+              <a href="MOCHA-TIMIT_pitch.zip">consensus truth</a>
+            </li>
+          </ul>
+        </p>
+        <p>The source code necessary for calculating the Consensus
+          truth is available on Github:</p>
+        <code><a href="https://github.com/bastibe/Consensus-Truth-Scripts">https://github.com/bastibe/Consensus-Truth-Scripts</a></code>
+        <p>
+          Source code for reading JBOF datasets in Python or Matlab is provided
+          under a free license on
+          <a href="https://github.com/bastibe/jbof">Github</a>.
+        </p>
+
+        <h2>References:</h2>
+        <ol class="references">
+          <li id="ref1">
+            John Kominek and Alan W Black. CMU ARCTIC database for speech
+            synthesis, 2003.</li>
+          <li id="ref1">
+            P. C. Bagshaw, S. Hiller, and M. A. Jack, “Enhanced Pitch Tracking and
+            the Processing of F0 Contours for Computer Aided Intonation Teaching,”
+            in EUROSPEECH, 1993.
           </li>
-          <li>
-            <a href="https://lost-contact.mit.edu/afs/nada.kth.se/dept/tmh/corpora/KeelePitchDB/Speech/">KEELE</a> [<a href="#ref3">3</a>]:
-            <a href="KEELE_pitch.zip">consensus truth</a>,
-            <a href="KEELE_import.zip">import script</a>,
-            <a href="https://ccs.jade-hs.de/s/ADdmP6wifgzysio">corpus dataset</a>
+          <li id="ref3">
+            F. Plante, G. F. Meyer, and W. A. Ainsworth, “A Pitch Extraction
+            Reference Database,” in Fourth European Conference on Speech
+            Communication and Technology, Madrid, Spain, 1995, pp. 837–840.
           </li>
-          <li>
-            <a href="https://www.spsc.tugraz.at/tools/ptdb-tug">PTDB-TUG</a> [<a href="#ref4">4</a>]:
-            <a href="PTDB-TUG_pitch.zip">consensus truth</a>,
-            <a href="PTDB-TUG_import.zip">import script</a>,
-            <a href="https://ccs.jade-hs.de/s/b8XsWRaGwmgmXyx">corpus dataset</a> (ODBL license)
+          <li id="ref4">
+            G. Pirker, M. Wohlmayr, S. Petrik, and F. Pernkopf, “A Pitch Tracking
+            Corpus with Evaluation on Multipitch Tracking Scenario.” in
+            INTERSPEECH, 2011, pp. 1509– 1512.
           </li>
-          <li>
-            <a href="https://catalog.ldc.upenn.edu/LDC93S1">TIMIT</a> [<a href="#ref5">5</a>]:
-            <a href="TIMIT_pitch.zip">consensus truth</a>,
-            <a href="TIMIT_import.zip">import script</a> (commercial)
+          <li id="ref5">
+            A. Wrench, “MOCHA MultiCHannel Articulatory database: English,” Nov.
+            1999. [Online]. Available:
+            http://www.cstr.ed.ac.uk/research/projects/artic/ mocha.html
           </li>
-          <li>
-            <a href="http://www.cstr.ed.ac.uk/research/projects/artic/mocha.html">MOCHA-TIMIT</a> [<a href="#ref6">6</a>]:
-            <a href="MOCHA-TIMIT_pitch.zip">consensus truth</a>,
-            <a href="MOCHA-TIMIT_import.zip">import script</a>,
-            <a href="https://ccs.jade-hs.de/s/D8CHofBaEwcbJkX">corpus dataset</a> (free for non-commercial use)
+          <li id="ref6">
+            J. S. Garofolo, L. F. Lamel, W. M. Fisher, J. G. Fiscus, D. S.
+            Pallett, N. L. Dahlgren, and V. Zue, “TIMIT Acoustic-Phonetic
+            Continuous Speech Corpus,” 1993. [Online]. Available:
+            https://catalog.ldc.upenn.edu/ LDC93S1
           </li>
-        </ul>
-      </p>
-      <p>
-        The import scripts are: (1) a shell script for downloading the corpora
-        from their original websites, and (2) a Python script for reading that
-        data and importing it into a JBOF dataset. JBOF datasets are a simple
-        file/directory structure for binary data and metadata that is easily
-        accessible both using a file explorer, and a programming language.
-      </p>
-      <p>
-        Source code for reading JBOF datasets in Python or Matlab is provided
-        under a free license on
-        <a href="https://github.com/bastibe/jbof">Github</a>.
-      </p>
-      <p>
-        No complete dataset can be provided for the TIMIT corpus, since its
-        license does not allow for it. Full datasets are currently hosted on an
-        OwnCloud instance, with the password "consensus". A better solution is
-        actively being working on.
-      </p>
-      <h2>References:</h2>
-      <ol class="references">
-        <li id="ref1">
-          P. C. Bagshaw, S. Hiller, and M. A. Jack, “Enhanced Pitch Tracking and
-          the Processing of F0 Contours for Computer Aided Intonation Teaching,”
-          in EUROSPEECH, 1993.
-        </li>
-        <li id="ref2">
-          P. A. Bagshaw, “Automatic prosodic analysis for computer aided
-          pronunciation teaching,” Ph.D. dissertation, University of Edinburgh,
-          Edinburgh, UK, 1994.
-        </li>
-        <li id="ref3">
-          F. Plante, G. F. Meyer, and W. A. Ainsworth, “A Pitch Extraction
-          Reference Database,” in Fourth European Conference on Speech
-          Communication and Technology, Madrid, Spain, 1995, pp. 837–840.
-        </li>
-        <li id="ref4">
-          G. Pirker, M. Wohlmayr, S. Petrik, and F. Pernkopf, “A Pitch Tracking
-          Corpus with Evaluation on Multipitch Tracking Scenario.” in
-          INTERSPEECH, 2011, pp. 1509– 1512.
-        </li>
-        <li id="ref5">
-          A. Wrench, “MOCHA MultiCHannel Articulatory database: English,” Nov.
-          1999. [Online]. Available:
-          http://www.cstr.ed.ac.uk/research/projects/artic/ mocha.html
-        </li>
-        <li id="ref6">
-          J. S. Garofolo, L. F. Lamel, W. M. Fisher, J. G. Fiscus, D. S.
-          Pallett, N. L. Dahlgren, and V. Zue, “TIMIT Acoustic-Phonetic
-          Continuous Speech Corpus,” 1993. [Online]. Available:
-          https://catalog.ldc.upenn.edu/ LDC93S1
-        </li>
-      </ol>
-    </article>
+        </ol>
+      </article>
+    </main>
+
     <footer>
       <p>© 2020, Bastian Bechtold. All rights reserved</p>
     </footer>
