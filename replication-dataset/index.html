@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>A Replication Dataset for Fundamental Frequency Estimation</title>
     <link rel="stylesheet" href="../style.css">
+    <script src="plotly-latest.min.js"></script>
+    <script src="create-plots.js"></script>
   </head>
   <body>
     <header>
@@ -133,6 +135,122 @@
           <li>F₁, the harmonic mean of precision and recall of the
             voicing decision.</li>
         </ul>
+
+        <h2>Example Results:</h2>
+
+        <p>The following graphs show a few key metrics that can be
+          extracted from the Replication Dataset. The graphs displayed
+          here are in no way complete, but should highlight the
+          fidelity of data available in the dataset. Please refer to
+          the dissertation itself for a more in-depth evaluation of
+          algorithms, databases, and evaluation methods.</p>
+
+        <h3>Gross Pitch Errors and Octave Errors</h3>
+        <div id="octave-errors-plot" style="width:600px;height:500px;"></div>
+
+        <p>The first graph gives an overview of the accuracy of
+          fundamental frequency estimation algorithms in terms of
+          gross pitch errors. The shaded areas are the mean gross
+          pitch errors of each algorithm, across all databases, and
+          graphed agains the signal-to-noise ratio (SNR). The upwards
+          triangles show high octave errors, downwards triangles show
+          low octave errors.</p>
+
+        <p>The graph highlights how the accuracy of all algorithms
+          deteriorates around 0&nbsp;dB&nbsp;SNR. At positive SNRs,
+          most algorithms can estimate the fundamental frequency of
+          speech with few errors. At negative SNRs, errors rise very
+          steeply. In general, error rates above 10-20% are often
+          considered useless.</p>
+
+        <p>Interestingly, it is the area around 0&nbsp;dB&nbsp;SNR
+          that shows the highest occurrence of octave errors. Octave
+          errors are caused by the algorithm mistaking a higher or
+          lower harmonic of the speech sound for the fundamental.
+          Thus, they occur most frequently where the general harmonic
+          pattern is still visible, but the details are partly
+          obscured. This type of detailed analysis is only possible
+          due to the high fidelity of the Replication Dataset.</p>
+
+        <h3>Voicing Detection Errors</h3>
+        <div id="error-summary-plot" style="width:600px;height:500px;"></div>
+
+        <p>The second graph show voicing detection errors. The solid
+          line is the same gross pitch error against SNR as before.
+          This time, pluses show voicing false positives, the
+          percentage of frames where the algorithm thought the speech
+          to be voiced, but it was unvoiced in reality. Crosses show
+          false positives, which were estimated unvoiced, but were
+          voiced. Finally, circles show the percentage of signals
+          without any estimates. If an algorithm does not have a
+          voicing detection, n circles, pluses, or crosses are
+          shown.</p>
+
+        <p>These evaluations are important as they are not captured by
+          the ubiquitous gross pitch error metric. The gross pitch
+          error only evaluates true positives, where both the
+          algorithm and the ground truth are voiced. In reality,
+          however, voicing detection errors are incorrect pitch
+          estimations, just like gross pitch errors. This highlights
+          how the gross pitch error measure can mislead.</p>
+
+        <p>Furthermore, there exists a tradeoff between voicing
+          detection errors and gross pitch errors. The more frames are
+          considered voiced, the more likely are gross pitch errors.
+          It is thus very tempting to simply mask uncertain estimates
+          as <em>unvoiced</em>. As the graph shows, however, these
+          voicing detection errors are highly problematic for many
+          algorithms, but are often not reported in algorithm
+          evaluations. The Replication Dataset contains a number of
+          new performance measures to investigate these phenomena in
+          unprecedented detail.</p>
+
+        <h3>Differences Between Speech Corpora</h3>
+        <div id="compare-corpora-plot" style="width:600px;height:500px;"></div>
+
+        <p>The third example graph shows the difference between
+          various speech corpora commonly used for evaluating
+          fundamental frequency estimation algorithms. Each line is
+          the difference between one corpus' accuracy and the mean
+          accuracy. If a line is positive, errors for this corpus are
+          greater than the average, if the line is positive, errors
+          are lower. CMU-Arctic is marked with upwards triangles, FDA
+          with downwards, KEELE with leftwards, MOCHA-TIMIT with
+          rightwards triangles, PTDB-TUG with stars, and TIMIT with
+          diamonds.</p>
+
+        <p>For some algorithms, the lines gather around the zero line,
+          which means the algorithm's accuracy is the same in all
+          corpora. For others, however, single corpora fare much
+          better or worse than others. If a single corpus has much
+          lower error rates than all other corpora, it is likely that
+          the algorithm was trained on that particular corpus. If one
+          corpus shows much higher error rates, it might contain a few
+          particular voices that an algorithm was not optimized
+          for.</p>
+
+        <p>Strikingly, the differences shown in this graph are very
+          large. In fact, they often exceed ten or twenty percent
+          gross pitch errors, which is far beyond the margin of
+          improvement usually claimed for new algorithms. Thus, this
+          graph shows a type of comparison that is only possible with
+          as large a dataset as the Replication Dataset, which shows
+          highly significant differences that a smaller dataset could
+          not show.</p>
+
+        <h3>Summary</h3>
+
+        <p>The full dissertation contains even more detailed analyses
+          of these algorithms, corpora, and evaluation measures,
+          including theoretical accuracy limits, fine pitch errors,
+          estimation biases, voicing detection tradeoffs, ground truth
+          comparisons, noise and noise corpus comparisons,
+          significance tests of differences between algorithms, and
+          fundamental frequency biases and dependencies.</p>
+
+        <p>It shows a number of differences in unprecedented detail,
+          some differences for the very first time, only possible due
+          to the vast data available in the Replication Dataset.</p>
 
         <h2>References:</h2>
         <ol class="references">
