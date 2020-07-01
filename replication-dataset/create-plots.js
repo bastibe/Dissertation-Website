@@ -77,10 +77,31 @@ function octave_errors(data) {
     for (var n=1; n<=20; n++) {
         layout['yaxis' + n] = {
             range: [-0.05, 1.05],
-            tickmode: 'linear',
-            tick0: 0,
-            dtick: 0.25
         };
+        if ((n-1) % 4 == 0) {
+            layout['yaxis' + n] = {
+                range: [-0.05, 1.05],
+                title: 'GPE',
+                tickvals: [0, 0.25, 0.5, 0.75, 1],
+                ticktext: [0, 0.25, 0.5, 0.75, 1]
+            }
+        } else {
+            layout['yaxis' + n] = {
+                range: [-0.05, 1.05],
+                tickvals: [0, 0.25, 0.5, 0.75, 1],
+                ticktext: ['', '', '', '', '']
+            }
+        }
+        if (n > 16) {
+            layout['xaxis' + n] = {
+                title: 'SNR in dB'
+            };
+        } else {
+            layout['xaxis' + n] = {
+                tickvals: [-20, -10, 0, 10, 20],
+                ticktext: ['', '', '', '', '']
+            };
+        }
     }
 
     Plotly.newPlot(graph, axesdata, layout);
@@ -145,14 +166,31 @@ function error_summary(data) {
         margin: {t: 0}
     };
     for (var n=1; n<=20; n++) {
-        layout['yaxis' + n] = {
-            range: [-0.05, 1.05],
-            tickmode: 'linear',
-            tick0: 0,
-            dtick: 0.25
-        };
+        if ((n-1) % 4 == 0) {
+            layout['yaxis' + n] = {
+                range: [-0.05, 1.05],
+                title: 'GPE',
+                tickvals: [0, 0.25, 0.5, 0.75, 1],
+                ticktext: [0, 0.25, 0.5, 0.75, 1]
+            }
+        } else {
+            layout['yaxis' + n] = {
+                range: [-0.05, 1.05],
+                tickvals: [0, 0.25, 0.5, 0.75, 1],
+                ticktext: ['', '', '', '', '']
+            }
+        }
+        if (n > 16) {
+            layout['xaxis' + n] = {
+                title: 'SNR in dB'
+            };
+        } else {
+            layout['xaxis' + n] = {
+                tickvals: [-20, -10, 0, 10, 20],
+                ticktext: ['', '', '', '', '']
+            };
+        }
     }
-
     Plotly.newPlot(graph, axesdata, layout);
 }
 
@@ -204,12 +242,30 @@ function compare_corpora(data) {
         margin: {t: 0}
     };
     for (var n=1; n<=20; n++) {
-        layout['yaxis' + n] = {
-            range: [-0.3, 0.3],
-            tickmode: 'linear',
-            tick0: -0.25,
-            dtick: 0.25
-        };
+        if ((n-1) % 4 == 0) {
+            layout['yaxis' + n] = {
+                range: [-0.3, 0.3],
+                title: 'ΔGPE',
+                tickvals: [-0.25, 0, 0.25],
+                ticktext: [-0.25, 0, 0.25],
+            }
+        } else {
+            layout['yaxis' + n] = {
+                range: [-0.3, 0.3],
+                tickvals: [-0.25, 0, 0.25],
+                ticktext: ['', '', '']
+            }
+        }
+        if (n > 16) {
+            layout['xaxis' + n] = {
+                title: 'SNR in dB'
+            };
+        } else {
+            layout['xaxis' + n] = {
+                tickvals: [-20, -10, 0, 10, 20],
+                ticktext: ['', '', '', '', '']
+            };
+        }
     }
 
     Plotly.newPlot(graph, axesdata, layout);

@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Consensus Ground Truth for Fundamental Frequency Estimation</title>
     <link rel="stylesheet" href="../style.css">
+    <script src="plotly-latest.min.js"></script>
+    <script src="create-plots.js"></script>
   </head>
   <body>
     <header>
@@ -76,6 +78,47 @@
           under a free license on
           <a href="https://github.com/bastibe/jbof">Github</a>.
         </p>
+
+        <h3>Examples</h3>
+
+        <p>The following graph compares the consensus truth with the
+          laryngograph-based ground truths in the FDA&nbsp;[2],
+          KEELE&nbsp;[3], and PTDB-TUG&nbsp;[4] corpora.</p>
+
+        <div id="compare-f0-plot" style="width:600px;height:400px;"></div>
+
+        <p>The majority of all estimates are very similar, as
+          evidenced by the large maximum at 1, with dashed lines at
+          the limits of gross correctness according to the common
+          gross pitch error measure.</p>
+
+        <p>However, there are discrepancies between the ground truths
+          and the consensus truth at lower frequencies, and
+          particularly at the octave intervals (¹∕₃, ¹∕₂, 2), which
+          indicate octave errors in the ground truths.</p>
+
+        <p>Thus, the consensus truth is broadly compatible with
+          existing ground truths for the evaluation of fundamental
+          frequency estimation algorithms, but more representative in
+          edge cases such as subharmonics or obscured fundamentals,
+          which would otherwise lead to octave errors.</p>
+
+        <p>A histogram of the resulting fundamental frequencies of
+          common speech corpora is shown in the next graph:</p>
+
+        <div id="f0-histogram-plot" style="width:600px;height:300px;"></div>
+
+        <p>Note that this histogram includes consensus truths for
+          TIMIT&nbsp;[5], MOCHA-TIMIT&nbsp;[6], and
+          CMU-ARCTIC&nbsp;[1], which do not have a ground truth of
+          their own. Interestingly, this analysis shows significant
+          differences in gender balance and frequency content between
+          the corpora.</p>
+
+        <p>The full dissertation contains an entire chapter on these
+          differences between the corpora, and their meaning for the
+          evaluation of fundamental frequency estimation
+          algorithms.</p>
 
         <h2>References:</h2>
         <ol class="references">
